@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+            <table class="table table-bordered border-primary mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">First</th>  
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">bio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for aftor in aftors %}
+                    <tr>
+                        <td>{{aftor.first_name}}</td>
+                        <td>{{aftor.last_name}}</td>
+                        <td>{{aftor.email}}</td>
+                        <td>{{aftor.bio}}</td>
+                      </tr>
+                      {% endfor %}
+                </tbody>
+              </table>  
+</body>   
+</html>
+{% endblock content %}
+
+

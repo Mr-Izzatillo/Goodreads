@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Book Add Page{% endblock title %}
+{% block content %}
+<h1 class='middle mt-3 mb-3'>Books</h1>
+<div class="container">
+    <div class='row'>
+        {% for book in books %}
+        <div class='col-md-3 mb-4'>
+            <div class='card h-100'>
+                <img src={{book.cover_pic.url}} class='card-img-top' alt="{{book.title}}">
+                <div class='card-body'>
+                    <h5 class='card-title'><a href="{% url 'books:detail' id=book.id %}">{{book.title}}</a></h5>
+                    <p class='card-text'>{{book.description}}</p>
+                </div>
+            </div>
+        </div>  
+        {%endfor%}
+    </div>
+</div>
+{% endblock content %}
