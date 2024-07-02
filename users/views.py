@@ -19,7 +19,7 @@ class Register(View):
             email =request.POST.get('email')
             password = request.POST.get('password')
             User.objects.create_user(username=username, first_name=first, last_name=last, email=email, password=password)
-            return redirect('login')
+            return redirect('users:login')
         return render(request, 'register.html')
     
     
